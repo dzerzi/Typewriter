@@ -6,6 +6,7 @@
     <Product>Typewriter</Product>
     <Description>Roslyn implementation of the Typewriter metadata model</Description>
     <Copyright>Copyright © 2017</Copyright>
+    <LangVersion>default</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugType>full</DebugType>
@@ -27,10 +28,10 @@
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Features" Version="2.9.0" />
-    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="2.9.0" />
-    <PackageReference Include="Microsoft.CodeAnalysis.Features" Version="2.9.0" />
-    <PackageReference Include="Microsoft.CodeAnalysis.VisualBasic.Features" Version="2.9.0" />
-    <PackageReference Include="Microsoft.CodeAnalysis.VisualBasic.Workspaces" Version="2.9.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Features" Version="4.0.1" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="4.0.1" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Features" Version="4.0.1" />
+    <PackageReference Include="Microsoft.CodeAnalysis.VisualBasic.Features" Version="4.0.1" />
+    <PackageReference Include="Microsoft.CodeAnalysis.VisualBasic.Workspaces" Version="4.0.1" />
   </ItemGroup>
 </Project>

@@ -41,21 +41,21 @@ namespace Typewriter.CLI
 
         public Project GetProject(string projectPath)
         {
-            ProjectAnalyzer projectAnalyzer = manager.GetProject(projectPath);
+            var projectAnalyzer = manager.GetProject(projectPath);
 
             return BuildAndGetProject(projectAnalyzer);
         }
 
-        private Project BuildAndGetProject(ProjectAnalyzer projectAnalyzer)
+        private Project BuildAndGetProject(IProjectAnalyzer projectAnalyzer)
         {
             logger.LogInformation($"Building project {projectAnalyzer.ProjectInSolution.ProjectName} and dependencies");
             AdhocWorkspace workspace = new AdhocWorkspace();
-            var build = Build(projectAnalyzer).First().AddToWorkspace(workspace, true);
+            var build = Build(projectAnalyzer as ProjectAnalyzer).First().AddToWorkspace(workspace, true);
             logger.LogInformation($"Built {workspace.CurrentSolution.ProjectIds.Count()} projects");
             return build;
         }
 
-        private AnalyzerResults Build(ProjectAnalyzer projectAnalyzer)
+        private IAnalyzerResults Build(ProjectAnalyzer projectAnalyzer)
         {
             EnvironmentOptions environmentOptions = new EnvironmentOptions();
             environmentOptions.DesignTime = options.DesignTime;

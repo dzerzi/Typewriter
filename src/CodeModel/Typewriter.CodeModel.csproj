@@ -7,6 +7,7 @@
     <Product>Typewriter</Product>
     <Description>Public interfaces for the Typewriter metadata model</Description>
     <Copyright>Copyright © 2017</Copyright>
+    <LangVersion>default</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugType>full</DebugType>
