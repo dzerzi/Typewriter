@@ -4,6 +4,26 @@
         <name>Typewriter.CodeModel</name>
     </assembly>
     <members>
+        <member name="T:Typewriter.CodeModel.Attributes.ContextAttribute">
+            <summary>
+            Marks context metadata classes.
+            </summary>
+        </member>
+        <member name="P:Typewriter.CodeModel.Attributes.ContextAttribute.Name">
+            <summary>
+            The name of the context.
+            </summary>
+        </member>
+        <member name="P:Typewriter.CodeModel.Attributes.ContextAttribute.CollectionName">
+            <summary>
+            The name of collections of the context.
+            </summary>
+        </member>
+        <member name="M:Typewriter.CodeModel.Attributes.ContextAttribute.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the ContextAttribute.
+            </summary>
+        </member>
         <member name="T:Typewriter.CodeModel.Attribute">
             <summary>
             Represents an attribute.
@@ -47,26 +67,6 @@
         <member name="T:Typewriter.CodeModel.AttributeCollection">
             <summary>
             Represents a collection of attributes.
-            </summary>
-        </member>
-        <member name="T:Typewriter.CodeModel.Attributes.ContextAttribute">
-            <summary>
-            Marks context metadata classes.
-            </summary>
-        </member>
-        <member name="P:Typewriter.CodeModel.Attributes.ContextAttribute.Name">
-            <summary>
-            The name of the context.
-            </summary>
-        </member>
-        <member name="P:Typewriter.CodeModel.Attributes.ContextAttribute.CollectionName">
-            <summary>
-            The name of collections of the context.
-            </summary>
-        </member>
-        <member name="M:Typewriter.CodeModel.Attributes.ContextAttribute.#ctor(System.String,System.String)">
-            <summary>
-            Initializes a new instance of the ContextAttribute.
             </summary>
         </member>
         <member name="T:Typewriter.CodeModel.AttributeArgument">
@@ -584,11 +584,6 @@
             Represents a collection of classes.
             </summary>
         </member>
-        <member name="T:Typewriter.CodeModel.IStringConvertable">
-            <summary>
-            Marker interface for collections that can render themselves as string
-            </summary>
-        </member>
         <member name="T:Typewriter.CodeModel.Field">
             <summary>
             Represents a field.
@@ -647,6 +642,11 @@
         <member name="P:Typewriter.CodeModel.File.Classes">
             <summary>
             All public classes defined in the file.
+            </summary>
+        </member>
+        <member name="P:Typewriter.CodeModel.File.Records">
+            <summary>
+            All public records defined in the file.
             </summary>
         </member>
         <member name="P:Typewriter.CodeModel.File.Delegates">
@@ -771,6 +771,11 @@
         <member name="T:Typewriter.CodeModel.InterfaceCollection">
             <summary>
             Represents a collection of interfaces.
+            </summary>
+        </member>
+        <member name="T:Typewriter.CodeModel.IStringConvertable">
+            <summary>
+            Marker interface for collections that can render themselves as string
             </summary>
         </member>
         <member name="T:Typewriter.CodeModel.Item">
@@ -992,6 +997,130 @@
         <member name="T:Typewriter.CodeModel.PropertyCollection">
             <summary>
             Represents a collection of properties.
+            </summary>
+        </member>
+        <member name="T:Typewriter.CodeModel.Record">
+            <summary>
+            Represents a record.
+            </summary>
+        </member>
+        <member name="P:Typewriter.CodeModel.Record.Attributes">
+            <summary>
+            All attributes defined on the record.
+            </summary>
+        </member>
+        <member name="P:Typewriter.CodeModel.Record.BaseRecord">
+            <summary>
+            The base record of the record.
+            </summary>
+        </member>
+        <member name="P:Typewriter.CodeModel.Record.Constants">
+            <summary>
+            All constants defined in the record.
+            </summary>
+        </member>
+        <member name="P:Typewriter.CodeModel.Record.ContainingRecord">
+            <summary>
+            The containing record of the record if it's nested.
+            </summary>
+        </member>
+        <member name="P:Typewriter.CodeModel.Record.Delegates">
+            <summary>
+            All delegates defined in the record.
+            </summary>
+        </member>
+        <member name="P:Typewriter.CodeModel.Record.DocComment">
+            <summary>
+            The XML documentation comment of the record.
+            </summary>
+        </member>
+        <member name="P:Typewriter.CodeModel.Record.Events">
+            <summary>
+            All events defined in the record.
+            </summary>
+        </member>
+        <member name="P:Typewriter.CodeModel.Record.Fields">
+            <summary>
+            All fields defined in the record.
+            </summary>
+        </member>
+        <member name="P:Typewriter.CodeModel.Record.FullName">
+            <summary>
+            The full original name of the record including namespace and containing record names.
+            </summary>
+        </member>
+        <member name="P:Typewriter.CodeModel.Record.Interfaces">
+            <summary>
+            All interfaces implemented by the record.
+            </summary>
+        </member>
+        <member name="P:Typewriter.CodeModel.Record.IsAbstract">
+            <summary>
+            Determines if the record is abstract.
+            </summary>
+        </member>
+        <member name="P:Typewriter.CodeModel.Record.IsGeneric">
+            <summary>
+            Determines if the record is generic.
+            </summary>
+        </member>
+        <member name="P:Typewriter.CodeModel.Record.Methods">
+            <summary>
+            All methods defined in the class.
+            </summary>
+        </member>
+        <member name="P:Typewriter.CodeModel.Record.name">
+            <summary>
+            The name of the record (camelCased).
+            </summary>
+        </member>
+        <member name="P:Typewriter.CodeModel.Record.Name">
+            <summary>
+            The name of the record.
+            </summary>
+        </member>
+        <member name="P:Typewriter.CodeModel.Record.Namespace">
+            <summary>
+            The namespace of the record.
+            </summary>
+        </member>
+        <member name="P:Typewriter.CodeModel.Record.Parent">
+            <summary>
+            The parent context of the record.
+            </summary>
+        </member>
+        <member name="P:Typewriter.CodeModel.Record.Properties">
+            <summary>
+            All properties defined in the record.
+            </summary>
+        </member>
+        <member name="P:Typewriter.CodeModel.Record.TypeArguments">
+            <summary>
+            All generic type arguments of the record.
+            TypeArguments are the specified arguments for the TypeParameters on a generic record e.g. &lt;string&gt;.
+            (In Visual Studio 2013 TypeParameters and TypeArguments are the same)
+            </summary>
+        </member>
+        <member name="P:Typewriter.CodeModel.Record.TypeParameters">
+            <summary>
+            All generic type parameters of the record.
+            TypeParameters are the type placeholders of a generic class e.g. &lt;T&gt;.
+            (In Visual Studio 2013 TypeParameters and TypeArguments are the same)
+            </summary>
+        </member>
+        <member name="M:Typewriter.CodeModel.Record.op_Implicit(Typewriter.CodeModel.Record)~System.String">
+            <summary>
+            Converts the current instance to string.
+            </summary>
+        </member>
+        <member name="M:Typewriter.CodeModel.Record.op_Implicit(Typewriter.CodeModel.Record)~Typewriter.CodeModel.Type">
+            <summary>
+            Converts the current instance to a Type.
+            </summary>
+        </member>
+        <member name="T:Typewriter.CodeModel.RecordCollection">
+            <summary>
+            Represents a collection of records.
             </summary>
         </member>
         <member name="T:Typewriter.CodeModel.Type">
