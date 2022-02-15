@@ -35,7 +35,7 @@ namespace Typewriter.CLI
 
         private static void Run(Options options)
         {
-            ILoggerFactory loggerFactory = options.Verbose ? new LoggerFactory().AddConsole((__,_) => true) : new LoggerFactory().AddConsole();
+            var loggerFactory = LoggerFactory.Create(builder => builder.AddConsole());
             using (loggerFactory)
             {
                 var typewriter = new Typewriter(loggerFactory);
@@ -45,9 +45,6 @@ namespace Typewriter.CLI
                     DesignTime = options.DesignTime
                 });
             }
-
-            
-
         }
     }
 }
